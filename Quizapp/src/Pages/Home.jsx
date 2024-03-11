@@ -1,16 +1,18 @@
 import { Box, Button, Flex, Heading, Input, Select } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   setCategory,
   setDifficulty,
   setName,
   setQuestionNum,
 } from "../redux/userSlice";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state);
+  // const user = useSelector((state) => state);
   const [name, setNameLo] = useState("");
   const [questionNum, setQuestionNumLo] = useState("");
   const [category, setCategoryLo] = useState("");
@@ -27,7 +29,9 @@ const Home = () => {
     setCategoryLo("");
     setDifficultyLo("");
     setQuestionNumLo("");
-    console.log(user);
+
+    // console.log(user);
+    navigate("/quiz");
   };
 
   //   console.log(typeof questionNum);
@@ -59,9 +63,9 @@ const Home = () => {
               value={difficulty}
               onChange={(e) => setDifficultyLo(e.target.value)}
             >
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
             </Select>
 
             <Input

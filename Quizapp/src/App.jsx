@@ -1,6 +1,7 @@
 import "./App.css";
 
 import Home from "./Pages/Home";
+import AllRoutes from "./routes/AllRoutes";
 // https://opentdb.com/api.php?amount=10
 function App() {
   // const [data, setData] = useState();
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       {/* <button onClick={handleclick}>click</button> */}
-      <Home />
+      <AllRoutes />
     </>
   );
 }
